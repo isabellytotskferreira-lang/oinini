@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>FocusRead - Leitor Customizável</title>
+    <style>
+        :root {
+            --bg: #faf8f5;
+            --text: #2d3748;
+            --card-bg: #ffffff;
+            --shadow-intensity: rgba(0, 0, 0, 0.06);
+        }
+
+        body.dark { --bg: #1a202c; --text: #edf2f7; --card-bg: #2d3748; --shadow-intensity: rgba(0,0,0,0.5); }
+        body.sepia { --bg: #fbf0d9; --text: #5f4b32; --card-bg: #f4e4c1; --shadow-intensity: rgba(95,75,50,0.1); }
+
+        * { transition: all 0.3s ease; box-sizing: border-box; }
+
+        body {
+            font-family: Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px var(--shadow-intensity);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px var(--shadow-intensity);
+        }
+
+        button {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <span>Modo:</span>
+        <button onclick="setTheme('')">Claro</button>
+        <button onclick="setTheme('dark')">Escuro</button>
+        <button onclick="setTheme('sepia')">Sépia</button>
+    </div>
+
+    <div class="content-card">
+        <h1>O Impacto do Design na Experiência de Leitura</h1>
+        <p>Ajustar o contraste e o sombreamento suave dos blocos de texto reduz a fadiga visual durante longas sessões de leitura técnica na web...</p>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.className = theme;
+        }
+    </script>
+</body>
+</html>
